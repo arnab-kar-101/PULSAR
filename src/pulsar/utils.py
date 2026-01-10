@@ -175,7 +175,7 @@ def extract_donor_embeddings_from_h5ad(
                 iterator = enumerate(data_loader)
             
             for _, batch in iterator:
-                input_embeddings = batch["cell_embedding"].to(device).to(torch.bfloat16)
+                input_embeddings = batch["cell_embedding"].to(device).to(torch.float32)
                 donor_ids = batch["donor_id"]
                 
                 # Get model output
